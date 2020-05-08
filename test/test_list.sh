@@ -29,7 +29,7 @@ expected="$(cat << EOS
   0.23.5
   0.22.5
   0.21.13
-* 0.20.5 (set by /home/travis/build/Estivador/tgenv/version)
+* 0.20.5 (set by ${PWD}/version)
 EOS
 )"
 
