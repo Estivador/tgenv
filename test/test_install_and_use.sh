@@ -29,7 +29,7 @@ v=$(tgenv list-remote | grep -e "^[0-9]\+\.[0-9]\+\.[0-9]\+$" | head -n 1)
 echo "### Install latest version with Regex"
 cleanup || error_and_die "Cleanup failed?!"
 
-v=$(tgenv list-remote | grep 0.23.14 | head -n 1)
+v=$(tgenv list-remote | grep 0.23. | head -n 1)
 (
   tgenv install latest:^0.23 || exit 1
   tgenv use latest:^0.23 || exit 1
