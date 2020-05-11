@@ -4,7 +4,7 @@ set -e
 source "${TGENV_ROOT}/libexec/helpers"
 
 if [ "${#}" -ne 0 ];then
-  echo "usage: tgenv list-remote" 1>&2
+  echo "usage: tgenv list-remote-all" 1>&2
   exit 1
 fi
 
