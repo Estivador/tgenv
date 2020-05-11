@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+curl --version
+
 if [ -n "${TGENV_DEBUG}" ]; then
   export PS4='+ [${BASH_SOURCE##*/}:${LINENO}] '
   set -x
