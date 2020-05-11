@@ -25,8 +25,8 @@ function curlw () {
   local TOKEN_HEADER=""
 
   if [ ! -z "${GH_API_TOKEN}" ]; then
-    TOKEN_HEADER="-H "authToken: ${GH_API_TOKEN}""
+    TOKEN_HEADER="-H \"authToken: ${GH_API_TOKEN}\""
   fi
 
-  curl ${TLS_OPT} ${TOKEN_HEADER} "$@"
+  curl ${TLS_OPT} $TOKEN_HEADER "$@"
 }
