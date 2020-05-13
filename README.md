@@ -1,5 +1,5 @@
 # Terragrunt Version Manager (tgenv)
-[![Build Status](https://travis-ci.org/Estivador/tgenv.svg?branch=master)](https://travis-ci.org/Estivador/tgenv)
+[![Build Status](https://travis-ci.com/Estivador/tgenv.svg?branch=master)](https://travis-ci.com/Estivador/tgenv)
 
 [Terragrunt](https://github.com/gruntwork-io/terragrunt) version manager inspired by [tfenv](https://github.com/kamatama41/tfenv)
 
