@@ -1,3 +1,11 @@
+## 0.0.9 (May 8, 2020)
+
+ * updated version information 
+
+## 0.0.8 (August 7, 2019)
+
+ * ...
+
 ## 0.0.7 (June 22, 2019)
 
  * curl flag to follow redirects

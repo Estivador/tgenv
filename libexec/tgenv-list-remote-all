@@ -4,11 +4,18 @@ set -e
 source "${TGENV_ROOT}/libexec/helpers"
 
 if [ "${#}" -ne 0 ];then
-  echo "usage: tgenv list-remote" 1>&2
+  echo "usage: tgenv list-remote-all" 1>&2
   exit 1
 fi
 
-curlw -sf "https://api.github.com/repos/gruntwork-io/terragrunt/git/refs/tags" \
-  | grep -o -E "[0-9]+\.[0-9]+\.[0-9]+(-(rc|beta|alpha)[0-9]+)?" \
-  | uniq \
-  | sort -t . -k 1nr,1 -k 2nr,2 -k 3nr,3
+if [[ -z ${GH_API_TOKEN} ]]; then
+  curlw -sf "https://api.github.com/repos/gruntwork-io/terragrunt/git/refs/tags" \
+    | grep -o -E "[0-9]+\.[0-9]+\.[0-9]+(-(rc|beta|alpha)[0-9]+)?" \
+    | uniq \
+    | sort -t . -k 1nr,1 -k 2nr,2 -k 3nr,3
+else
+  curlw -H "Authorization: token ${GH_API_TOKEN}" "https://api.github.com/repos/gruntwork-io/terragrunt/git/refs/tags" \
+    | grep -o -E "[0-9]+\.[0-9]+\.[0-9]+(-(rc|beta|alpha)[0-9]+)?" \
+    | uniq \
+    | sort -t . -k 1nr,1 -k 2nr,2 -k 3nr,3
+fi
