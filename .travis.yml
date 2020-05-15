@@ -1,8 +1,8 @@
 language: generic
-matrix:
+jobs:
   include:
     - os: linux
-      dist: trusty
+      dist: xenial
     - os: osx
       osx_image: xcode11.4 # OS X 10.14.6
     - os: osx
